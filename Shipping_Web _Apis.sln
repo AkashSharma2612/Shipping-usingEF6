@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shipping_Web _Apis", "Shipping_Web _Apis\Shipping_Web _Apis.csproj", "{DA0968D0-FF87-4836-81F5-F1772C8D88B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F86F9643-C22D-4BBA-A26C-14EDF72A1402}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA0968D0-FF87-4836-81F5-F1772C8D88B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0968D0-FF87-4836-81F5-F1772C8D88B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0968D0-FF87-4836-81F5-F1772C8D88B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0968D0-FF87-4836-81F5-F1772C8D88B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85F18E3C-AFCE-4713-871F-994DF0BFCEA9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,65 @@
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\appsettings.Development.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\appsettings.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Shipping_Web _Apis.exe
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Shipping_Web _Apis.deps.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Shipping_Web _Apis.runtimeconfig.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Shipping_Web _Apis.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Shipping_Web _Apis.pdb
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Humanizer.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.OpenApi.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.Drawing.Common.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.Runtime.Caching.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.Security.Permissions.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\System.Windows.Extensions.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.csproj.AssemblyReference.cache
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.GeneratedMSBuildEditorConfig.editorconfig
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.AssemblyInfoInputs.cache
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.AssemblyInfo.cs
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.csproj.CoreCompileInputs.cache
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.MvcApplicationPartsAssemblyInfo.cs
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.MvcApplicationPartsAssemblyInfo.cache
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets\msbuild.Shipping_Web _Apis.Microsoft.AspNetCore.StaticWebAssets.props
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets\msbuild.build.Shipping_Web _Apis.props
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Shipping_Web _Apis.props
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Shipping_Web _Apis.props
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets.pack.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets.build.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\staticwebassets.development.json
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\scopedcss\bundle\Shipping_Web _Apis.styles.css
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.csproj.CopyComplete
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\refint\Shipping_Web _Apis.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.pdb
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.genruntimeconfig.cache
+G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\ref\Shipping_Web _Apis.dll
