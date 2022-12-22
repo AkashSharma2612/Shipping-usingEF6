@@ -7,35 +7,44 @@ namespace Shipping_Web__Apis.Repository
 {
     public class ShipmentRepository : IShipmentRepository
     {
-         private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         public ShipmentRepository(ApplicationDbContext context)
         {
             _context = context;
         }
-        public async Task AddShipment(Shipment shipment)
+    
+        public bool CreateShipments(Shipment shipment)
         {
-            await _context.Shipments.AddAsync(shipment);
-            await _context.SaveChangesAsync();
+            _context.Shipments.Add(shipment);
+            return save();
         }
 
-        public async Task DeleteShipment(int id)
+        public bool DeleteShipments(int id)
         {
-            var shipmentInDb = await _context.Shipments.FindAsync(id);
+           var shipmentInDb= _context.Shipments.Find(id);
             _context.Shipments.Remove(shipmentInDb);
-             await _context.SaveChangesAsync();
+            return save();
         }
 
-        public async Task<List<Shipment>> GetShipments()
+        public Shipment GetShipment(int shipmentId)
         {
-            return await _context.Shipments.Include(c=>c.Client).
-            Include(c=>c.ShipFromAddress).Include(c=>c.ShipToAddress).ToListAsync();
+            return _context.Shipments.Find(shipmentId);
         }
 
-        public async Task UpdateShipment(Shipment shipment)
+        public ICollection<Shipment> GetShipments()
+        {
+            return _context.Shipments.Include(c => c.Client).Include(c => c.ShipToAddress).Include(c => c.ShipFromAddress).ToList();
+        }
+
+        public bool save()
+        {
+            return _context.SaveChanges() == 1 ? true : false;
+        }
+
+        public bool UpdateShipment(Shipment shipment)
         {
             _context.Shipments.Update(shipment);
-            await _context.SaveChangesAsync();
+            return save();
         }
-
     }
 }

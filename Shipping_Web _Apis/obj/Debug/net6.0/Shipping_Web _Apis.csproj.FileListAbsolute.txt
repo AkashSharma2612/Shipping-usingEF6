@@ -63,3 +63,6 @@ G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\refint\Shipping_Web _A
 G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.pdb
 G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\Shipping_Web _Apis.genruntimeconfig.cache
 G:\Shipping_Web _Apis\Shipping_Web _Apis\obj\Debug\net6.0\ref\Shipping_Web _Apis.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\AutoMapper.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+G:\Shipping_Web _Apis\Shipping_Web _Apis\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

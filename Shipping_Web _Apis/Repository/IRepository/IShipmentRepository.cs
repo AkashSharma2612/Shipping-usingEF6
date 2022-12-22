@@ -4,11 +4,12 @@ namespace Shipping_Web__Apis.Repository.IRepository
 {
     public interface IShipmentRepository
     {
-        Task<List<Shipment>> GetShipments();
-        Task AddShipment(Shipment shipment);
+        ICollection<Shipment> GetShipments();
 
-        Task UpdateShipment(Shipment shipment);
-
-        Task DeleteShipment(int id);
+        bool CreateShipments(Shipment shipment);
+        bool UpdateShipment(Shipment shipment);
+        bool DeleteShipments(int id);
+        Shipment GetShipment(int shipmentPackId);
+        bool save();
     }
 }

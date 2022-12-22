@@ -1,43 +1,61 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Shipping_Web__Apis.DTOModels;
 using Shipping_Web__Apis.Models;
 using Shipping_Web__Apis.Repository.IRepository;
 
 namespace Shipping_Web__Apis.Controllers
 {
-    [Route("api/Shipment")]
+    [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ShipmentController : ControllerBase
     {
         private readonly IShipmentRepository _shipmentRepository;
-        public ShipmentController(IShipmentRepository shipmentRepository)
+        private readonly IMapper _mapper;
+        public ShipmentController(IShipmentRepository shipmentRepository,IMapper mapper)
+            
         {
             _shipmentRepository = shipmentRepository;
-
+            _mapper = mapper;
         }
         [HttpGet]
-        public async Task<IEnumerable<Shipment>> Get()
+        public IActionResult GetShipments()
         {
-            return await _shipmentRepository.GetShipments();
+            var shipmentDtoInList = _shipmentRepository.GetShipments().ToList();
+            return Ok(shipmentDtoInList);
         }
-
         [HttpPost]
-        public async Task Post([FromBody] Shipment shipment)
+        public IActionResult SaveShipment(ShipmentDTO shipmentDTO)
         {
-            await _shipmentRepository.AddShipment(shipment);
+            if (shipmentDTO == null) return BadRequest();
+            var shipdto= _mapper.Map<ShipmentDTO,Shipment>(shipmentDTO);
+            if(shipdto==null)return BadRequest();
+             _shipmentRepository.CreateShipments(shipdto);
+                return Ok(shipdto);
+            
         }
-
         [HttpPut]
-        public async Task Put([FromBody] Shipment shipment)
+        public IActionResult UpdateShipment(ShipmentDTO shipmentDTO)
         {
-            await _shipmentRepository.UpdateShipment(shipment);
-        }
+            var shipment=_mapper.Map<Shipment>(shipmentDTO);
+            _shipmentRepository.UpdateShipment(shipment);
+            _shipmentRepository.save();
+            return Ok(shipment);
 
-        [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        }
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteShipment(int shipmentId)
         {
-            await _shipmentRepository.DeleteShipment(id);
-        }
+            var shipment= _shipmentRepository.GetShipment(shipmentId);
+            if (shipment == null) return NotFound();
+            _shipmentRepository.DeleteShipments(shipmentId);
+            _shipmentRepository.save();
+            return Ok();
 
+
+        }
     }
 }

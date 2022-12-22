@@ -19,5 +19,7 @@ namespace Shipping_Web__Apis.DataAccess
 
         public DbSet<ShipmentPackage> ShipmentPackages { get; set; }
 
+        public DbSet<USer> Users { get; set; }
+
     }
 }

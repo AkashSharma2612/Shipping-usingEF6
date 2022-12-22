@@ -12,30 +12,40 @@ namespace Shipping_Web__Apis.Repository
         {
             _context = context;
         }
-        public async Task AddShipmentPackage(ShipmentPackage shipmentPackage)
+
+        public bool CreateShipmentPackage(ShipmentPackage shipmentPackage)
         {
-            await _context.ShipmentPackages.AddAsync(shipmentPackage);
-            await _context.SaveChangesAsync();
+            _context.ShipmentPackages.Add(shipmentPackage);
+                return save();
         }
 
-        public async Task DeleteShipmentPackage(int id)
+        public bool DeleteShipmentPackage(ShipmentPackage shipmentPackage)
         {
-            var shipPackInDb = await _context.ShipmentPackages.FindAsync(id);
-            _context.ShipmentPackages.Remove(shipPackInDb);
-            await _context.SaveChangesAsync();
+            _context.ShipmentPackages.Remove(shipmentPackage);
+            return save();
+
         }
 
-        public async Task<List<ShipmentPackage>> GetShipmentPackages()
+        public ShipmentPackage GetShipmentPackage(int shipmentPackId)
         {
-            return await _context.ShipmentPackages.Include(s => s.Shipment).
-            Include(s => s.Shipment.Client).Include(s => s.Shipment.ShipFromAddress).
-            Include(s => s.Shipment.ShipToAddress).ToListAsync();
+            return _context.ShipmentPackages.Find(shipmentPackId);
         }
 
-        public async Task UpdateShipmentPackage(ShipmentPackage shipmentPackage)
+        public ICollection<ShipmentPackage>GetShipmentPackages()
+        {
+            return _context.ShipmentPackages.Include(s => s.Shipment).Include(s=>s.Shipment.Client).Include(s=>s.Shipment.ShipToAddress).Include(s=>s.Shipment.ShipFromAddress).ToList();
+        }
+
+        public bool save()
+        {
+            return _context.SaveChanges() == 1 ? true : false;
+        }
+
+        public bool UpdateShipmentPackage(ShipmentPackage shipmentPackage)
         {
             _context.ShipmentPackages.Update(shipmentPackage);
-            await _context.SaveChangesAsync();
+            return save();
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping_Web__Apis.Models;
 using Shipping_Web__Apis.Repository;
@@ -8,6 +9,7 @@ namespace Shipping_Web__Apis.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ShipToAddressController : ControllerBase
     {
         private readonly IShipToAddressRepository _shioToAddressRepository;
