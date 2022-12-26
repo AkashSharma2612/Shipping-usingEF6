@@ -16,7 +16,7 @@ namespace Shipping_Web__Apis.Controllers
         {
             _shipFromAddressRepository = shipFromAddressRepository;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<ShipFromAddress>> Get()
         {

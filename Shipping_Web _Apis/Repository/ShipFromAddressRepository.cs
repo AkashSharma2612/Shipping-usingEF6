@@ -24,8 +24,8 @@ namespace Shipping_Web__Apis.Repository
 
            public async Task DeleteShipFromAddress(int id)
             {
-                var ShipFromAddInDb = await _context.ShipFromAddresses.FindAsync(id);
-                _context.ShipFromAddresses.Remove(ShipFromAddInDb);
+                var ShipFromAddressInDb = await _context.ShipFromAddresses.FindAsync(id);
+                _context.ShipFromAddresses.Remove(ShipFromAddressInDb);
                 await _context.SaveChangesAsync();
             }
 

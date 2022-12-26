@@ -17,7 +17,7 @@ namespace Shipping_Web__Apis.Controllers
         {
             _shioToAddressRepository = shioToAddressRepository;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<ShipToAddress>> Get()
         {

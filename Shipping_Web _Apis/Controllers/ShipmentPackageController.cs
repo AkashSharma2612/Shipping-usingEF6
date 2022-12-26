@@ -21,6 +21,7 @@ namespace Shipping_Web__Apis.Controllers
             _shipmentPackageRepository = shipmentPackageRepository;
             _mapper = mapper;
         }
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetShipmentPackages()
         {
@@ -34,7 +35,7 @@ namespace Shipping_Web__Apis.Controllers
             var shipPackdto = _mapper.Map<ShipmentPackageDTO, ShipmentPackage>(shipmentPackageDTO);
             if (shipmentPackageDTO == null) return BadRequest();
             _shipmentPackageRepository.CreateShipmentPackage(shipPackdto);
-            return Ok(shipPackdto);
+            return Ok(new {message="Data Saved"});
         }
         [HttpPut]
         public IActionResult UpdateShipmentPackage(ShipmentPackageDTO shipmentPackageDTO) 
@@ -42,15 +43,15 @@ namespace Shipping_Web__Apis.Controllers
             var shipmentPackage = _mapper.Map<ShipmentPackage>(shipmentPackageDTO);
             _shipmentPackageRepository.UpdateShipmentPackage(shipmentPackage);
             _shipmentPackageRepository.save();
-            return Ok(shipmentPackage);
+            return Ok(new { message = "Data Updated" });
         }
         [HttpDelete("{id:int}")]
         public IActionResult DeleteShipmentPackage(int id)
         {
-            var shipmentPackage = _shipmentPackageRepository.GetShipmentPackage(id);
-            _shipmentPackageRepository.DeleteShipmentPackage(shipmentPackage);
+            var shipmentPackageInDb = _shipmentPackageRepository.GetShipmentPackage(id);
+            _shipmentPackageRepository.DeleteShipmentPackage(shipmentPackageInDb);
             _shipmentPackageRepository.save();
-            return Ok();
+            return Ok(new {message="Data Deleted"});
         }
     }
 }

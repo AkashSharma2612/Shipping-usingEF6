@@ -21,6 +21,7 @@ namespace Shipping_Web__Apis.Controllers
             _shipmentRepository = shipmentRepository;
             _mapper = mapper;
         }
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetShipments()
         {
@@ -31,29 +32,29 @@ namespace Shipping_Web__Apis.Controllers
         public IActionResult SaveShipment(ShipmentDTO shipmentDTO)
         {
             if (shipmentDTO == null) return BadRequest();
-            var shipdto= _mapper.Map<ShipmentDTO,Shipment>(shipmentDTO);
-            if(shipdto==null)return BadRequest();
-             _shipmentRepository.CreateShipments(shipdto);
-                return Ok(shipdto);
+            var shipmentDto= _mapper.Map<ShipmentDTO,Shipment>(shipmentDTO);
+            if(shipmentDto==null)return BadRequest();
+             _shipmentRepository.CreateShipments(shipmentDto);
+                return Ok(new {message="data saved"});
             
         }
         [HttpPut]
         public IActionResult UpdateShipment(ShipmentDTO shipmentDTO)
         {
-            var shipment=_mapper.Map<Shipment>(shipmentDTO);
-            _shipmentRepository.UpdateShipment(shipment);
+            var shipmentDto=_mapper.Map<Shipment>(shipmentDTO);
+            _shipmentRepository.UpdateShipment(shipmentDto);
             _shipmentRepository.save();
-            return Ok(shipment);
+            return Ok(new {message="data updated"});
 
         }
         [HttpDelete("{id:int}")]
         public IActionResult DeleteShipment(int shipmentId)
         {
-            var shipment= _shipmentRepository.GetShipment(shipmentId);
-            if (shipment == null) return NotFound();
+            var shipmentInDb= _shipmentRepository.GetShipment(shipmentId);
+            if (shipmentInDb == null) return NotFound();
             _shipmentRepository.DeleteShipments(shipmentId);
             _shipmentRepository.save();
-            return Ok();
+            return Ok(new {message="Data deleted"});
 
 
         }

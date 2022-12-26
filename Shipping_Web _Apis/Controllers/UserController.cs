@@ -22,7 +22,7 @@ namespace Shipping_Web__Apis.Controllers
             {
                 var IsUniqueUser = _userRepository.IsUniqueUser(user.UserName);
                 if (!IsUniqueUser)
-                    return BadRequest("Username In  Use");
+                    return BadRequest("Username In Use");
                 var UserInfo = _userRepository.Register(user.UserName, user.Password);
                 if (UserInfo == null)
                     return BadRequest();

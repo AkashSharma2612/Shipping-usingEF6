@@ -9,6 +9,7 @@ namespace Shipping_Web__Apis.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
+    //[AllowAnonymous]
     public class ClientController : ControllerBase
     {
         private readonly IClientRepository _clientRepository;
@@ -16,7 +17,7 @@ namespace Shipping_Web__Apis.Controllers
         {
             _clientRepository = clientRepository;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<Client>> Get()
         {
@@ -29,12 +30,12 @@ namespace Shipping_Web__Apis.Controllers
 
             await _clientRepository.AddClient(client);
         }
+
         [HttpPut]
         public async Task Put([FromBody] Client client)
         {
             await _clientRepository.UpdateClient(client);
         }
-
 
         [HttpDelete("{id}")]
         public async Task Delete(int id)
