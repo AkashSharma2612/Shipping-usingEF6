@@ -44,6 +44,11 @@ namespace Shipping_Web__Apis.Repository
             return userInDb;
         }
 
+        public ICollection<USer> GetUsers()
+        {
+            return _context.Users.ToList();
+        }
+
         public bool IsUniqueUser(string Username)
         {
             var user = _context.Users.FirstOrDefault(u => u.UserName == Username);

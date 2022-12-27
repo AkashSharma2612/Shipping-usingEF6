@@ -1,8 +1,12 @@
-﻿namespace Shipping_Web__Apis.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Shipping_Web__Apis.Models
 {
     public class Shipment
     {
         public int Id { get; set; }
+        [NotMapped]
+        public string EncryptedId { get; set; }
 
         public DateTime CreateDate { get; set; }
 

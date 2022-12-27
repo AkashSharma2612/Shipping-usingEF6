@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Shipping_Web__Apis;
 using Shipping_Web__Apis.DataAccess;
+using Shipping_Web__Apis.Models;
 using Shipping_Web__Apis.Repository;
 using Shipping_Web__Apis.Repository.IRepository;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -27,6 +28,8 @@ builder.Services.AddScoped<IShipToAddressRepository, ShipToAddressRepository>();
 builder.Services.AddScoped<IShipmentRepository, ShipmentRepository>();
 builder.Services.AddScoped<IShipmentPackageRepository, ShipmentPackageRepository>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddDataProtection();
+builder.Services.AddSingleton<SecurityPurpose>();
 //for Authorization
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
@@ -65,6 +68,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 
 app.UseAuthorization();

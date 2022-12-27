@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shipping_Web__Apis.DTOModels;
@@ -15,18 +16,25 @@ namespace Shipping_Web__Apis.Controllers
     {
         private readonly IShipmentRepository _shipmentRepository;
         private readonly IMapper _mapper;
-        public ShipmentController(IShipmentRepository shipmentRepository,IMapper mapper)
+        private readonly IDataProtector _dataProtector;
+        public ShipmentController(IShipmentRepository shipmentRepository,IMapper mapper,IDataProtectionProvider dataProtectionProvider,SecurityPurpose securityPurpose)
             
         {
             _shipmentRepository = shipmentRepository;
             _mapper = mapper;
+            _dataProtector = dataProtectionProvider.CreateProtector(securityPurpose.ClientRouteValue);
         }
         [AllowAnonymous]
         [HttpGet]
         public IActionResult GetShipments()
         {
-            var shipmentDtoInList = _shipmentRepository.GetShipments().ToList();
-            return Ok(shipmentDtoInList);
+            var shipmentDtoInList = _shipmentRepository.GetShipments().Select(e =>
+            {
+                e.EncryptedId = _dataProtector.Protect(e.Id.ToString());
+                e.Client.Name = _dataProtector.Protect(e.Client.Name);
+                return e;
+            });
+                return Ok(shipmentDtoInList);
         }
         [HttpPost]
         public IActionResult SaveShipment(ShipmentDTO shipmentDTO)
