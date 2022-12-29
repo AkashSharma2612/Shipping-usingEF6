@@ -16,25 +16,25 @@ namespace Shipping_Web__Apis.Controllers
     {
         private readonly IShipmentRepository _shipmentRepository;
         private readonly IMapper _mapper;
-        private readonly IDataProtector _dataProtector;
-        public ShipmentController(IShipmentRepository shipmentRepository,IMapper mapper,IDataProtectionProvider dataProtectionProvider,SecurityPurpose securityPurpose)
+
+        public ShipmentController(IShipmentRepository shipmentRepository,IMapper mapper)
             
         {
             _shipmentRepository = shipmentRepository;
             _mapper = mapper;
-            _dataProtector = dataProtectionProvider.CreateProtector(securityPurpose.ClientRouteValue);
+          //  _dataProtector = dataProtectionProvider.CreateProtector(securityPurpose.ClientRouteValue);
         }
         [AllowAnonymous]
         [HttpGet]
         public IActionResult GetShipments()
         {
-            var shipmentDtoInList = _shipmentRepository.GetShipments().Select(e =>
-            {
+            var shipmentDtoInList = _shipmentRepository.GetShipments().ToList();
+            /*{
                 e.EncryptedId = _dataProtector.Protect(e.Id.ToString());
                 e.Client.Name = _dataProtector.Protect(e.Client.Name);
                 return e;
             });
-                return Ok(shipmentDtoInList);
+ */               return Ok(shipmentDtoInList);
         }
         [HttpPost]
         public IActionResult SaveShipment(ShipmentDTO shipmentDTO)

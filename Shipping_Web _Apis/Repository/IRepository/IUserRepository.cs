@@ -6,7 +6,7 @@ namespace Shipping_Web__Apis.Repository.IRepository
     {
         ICollection<USer> GetUsers();
         bool IsUniqueUser(string Username);
-        USer Authenticate(string Username, string password);
+        USer Authenticate(string Username, string Password);
         USer Register(string Username, string Password);
 
     }

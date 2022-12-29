@@ -19,31 +19,37 @@ namespace Shipping_Web__Apis.Repository
             _appsettings = appSettings.Value;
 
         }
-        public USer Authenticate(string Username, string password)
+        public USer Authenticate(string Username, string Password)
         {
-            var userInDb = _context.Users.FirstOrDefault(u => u.UserName == Username && u.Password == password);
-            if (userInDb == null)
-                return null;
-            //JWT Autentication
-            var TokenHandeler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appsettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor()
+            var userInDb = _context.Users.FirstOrDefault(u => u.UserName == Username);
+            if (userInDb != null)
             {
-                Subject = new ClaimsIdentity(new Claim[]
+                var userExist = SecurityPurpose.DecryptionData(userInDb.Password);
+                userInDb.Password = userExist;
+            }
+            if (userInDb.UserName == Username && userInDb.Password == Password)
+            {
+                //JWT Autentication
+                var TokenHandeler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_appsettings.Secret);
+                var tokenDescriptor = new SecurityTokenDescriptor()
                 {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
                     new Claim(ClaimTypes.Name,userInDb.Id.ToString()),
                     new Claim(ClaimTypes.Role,userInDb.Role)
-                }),
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    }),
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
 
-            };
-            var token = TokenHandeler.CreateToken(tokenDescriptor);
-            userInDb.Token = TokenHandeler.WriteToken(token);
-            userInDb.Password = "";
-            return userInDb;
-        }
-
+                };
+                var token = TokenHandeler.CreateToken(tokenDescriptor);
+                userInDb.Token = TokenHandeler.WriteToken(token);
+                userInDb.Password = "";
+                return userInDb;
+            }
+            return null;
+    }
         public ICollection<USer> GetUsers()
         {
             return _context.Users.ToList();
@@ -66,6 +72,8 @@ namespace Shipping_Web__Apis.Repository
                 Password = Password,
                 Role = "Admin"
             };
+            //user.UserName = SecurityPurpose.Encryption(user.UserName);
+            user.Password=SecurityPurpose.Encryption(user.Password);
             _context.Users.Add(user);
             _context.SaveChanges();
             return user;

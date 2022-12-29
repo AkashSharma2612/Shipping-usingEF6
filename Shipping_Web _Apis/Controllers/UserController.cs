@@ -12,27 +12,24 @@ namespace Shipping_Web__Apis.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-        private readonly IDataProtector _dataProtector;
-        public UserController(IUserRepository userRepository, IDataProtectionProvider dataProtectionProvider, SecurityPurpose securityPurpose)
+      
+        public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _dataProtector = dataProtectionProvider.CreateProtector(securityPurpose.ClientRouteValue);
+           // _dataProtector = dataProtectionProvider.CreateProtector(securityPurpose.ClientRouteValue);
         }
         [HttpGet]
         public IActionResult GetUsers() {
 
-            var userInList = _userRepository.GetUsers().Select(e =>
+            var userInList = _userRepository.GetUsers().ToList();
+            var DataList = userInList.Select(e => new
             {
-                e.UserName = _dataProtector.Protect(e.UserName);
-                e.Password = _dataProtector.Protect(e.Password);
-                /*e.UserName = _dataProtector.Unprotect(e.UserName);
-                e.Password = _dataProtector.Unprotect(e.Password);*/
-               // e.Role = _dataProtector.Unprotect(e.Role);
-                e.Role = _dataProtector.Protect(e.Role);
-                return e;
-
+                id=e.Id,
+                username=e.UserName,
+                password=SecurityPurpose.DecryptionData(e.Password),
+                Role=e.Role
             });
-            return Ok(userInList);
+            return Ok(DataList);
 
         }
         [HttpPost("register")]
